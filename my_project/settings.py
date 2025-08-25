@@ -10,15 +10,21 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
-from pathlib import Path
 import os
+import sys
+from pathlib import Path
 import dj_database_url
-if os.path.isfile('env.py'):
-    import env
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
+# Build paths inside the project like this: BASE_DIR / 'subdir'. 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# Add BASE_DIR to the Python path so env.py can be imported from there
+sys.path.append(str(BASE_DIR))
+
+# Safely import env.py if it exists in the project root
+env_path = BASE_DIR / "env.py"
+if env_path.is_file():
+    import env
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
@@ -27,7 +33,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-cj_^yx6@q_vuz_b@#j_m333q7va=!8x&^pq6bl&!+xqm-d&e'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['.herokuapp.com', '127.0.0.1']
 
@@ -87,7 +93,8 @@ WSGI_APPLICATION = 'my_project.wsgi.application'
 # }
 
 DATABASES = {
-    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+    'default': dj_database_url.parse(os.environ.get(
+        "DATABASE_URL"))
 }
 
 # Password validation
