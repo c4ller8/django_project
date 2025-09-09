@@ -1,7 +1,9 @@
 # django_project
 
-Django Blog
-Overview
+## Django Blog
+
+### Overview
+
 Django Blog is a fully-featured, user-friendly blogging platform designed for writers and readers to connect over shared ideas. The site provides a clean, intuitive interface for authors to publish their thoughts and for the community to discover, read, and interact with content. Django Blog is targeted at individuals looking for a simple yet powerful platform to start a blog, share their expertise, or build a writing portfolio. It will be useful by removing the technical barriers to publishing online, offering a self-contained system for content management and audience engagement.
 
 Responsive Mockup
