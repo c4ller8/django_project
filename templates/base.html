@@ -10,7 +10,12 @@
 <body>
     neon genesis evangelion
     <nav>
-
+        <ul>
+            <!-- This is where you create a link TO the homepage -->
+            <li><a href="{% url 'home:index' %}">Home</a></li>
+            <!-- This link would take you to the episodes list -->
+            <li><a href="{% url 'ep_urls:episodes' %}">All Episodes</a></li>
+        </ul>
     </nav>
 
     <main>
