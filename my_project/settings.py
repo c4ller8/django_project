@@ -29,7 +29,9 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = os.environ.get("DEBUG", False)
 
 ALLOWED_HOSTS = []
-CSRF_TRUSTED_ORIGINS = []
+CSRF_TRUSTED_ORIGINS = [ 
+    "https://*.codeinstitute-ide.net/",
+    "https://*.herokuapp.com"]
 host = os.environ.get("HOST")
 if host:
     ALLOWED_HOSTS.append(host)
