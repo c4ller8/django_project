@@ -18,7 +18,6 @@ Responsive Mockup
 ## Data Model (Database Schema)
 
 - **Initial ERD:** (The first diagram)
-  ## My ERD
 
 ```mermaid
 erDiagram
@@ -59,7 +58,9 @@ erDiagram
     }
 ```
 
-- **Final ERD:** (My improved diagram with FKs)
+## Final ERD
+
+(My improved diagram with FKs)
 
 ```mermaid
 erDiagram
