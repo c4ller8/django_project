@@ -59,9 +59,52 @@ erDiagram
     }
 ```
 
-- **Final ERD:** (Your improved diagram with FKs)
-  - `![Final ERD](path/to/final_erd.png)`
-  - Final ERD explicitly defining primary and foreign keys for implementation.\_
+- **Final ERD:** (My improved diagram with FKs)
+
+```mermaid
+erDiagram
+    USER ||--o{ POST : writes
+    USER ||--o{ COMMENT : writes
+    EPISODE ||--o{ POST : contains
+    POST ||--o{ COMMENT : receives
+
+    USER {
+        int id PK
+        string username
+        string email
+        string password_hash
+    }
+
+    EPISODE {
+        int id PK
+        int episode_number
+        string title
+        text description
+        string image_url
+    }
+
+    POST {
+        int id PK
+        string title
+        text content
+        int rating
+        boolean is_published
+        datetime created_at
+        datetime updated_at
+        int user_id FK
+        int episode_id FK
+    }
+
+    COMMENT {
+        int id PK
+        text body
+        boolean is_approved
+        datetime created_at
+        datetime updated_at
+        int user_id FK
+        int post_id FK
+    }
+```
 
 ## Features
 
