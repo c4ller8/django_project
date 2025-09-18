@@ -19,7 +19,7 @@ Responsive Mockup
 
 - **Initial ERD:** (The first diagram)
   <strong>Entity-Relationship Diagram (ERD)</strong>
-  <img src="https://github.com/c4ller8/django_project/blob/e677d82e8ccc16082729ac91fba5bef6249cde97/css/assets/old-diagram-mermaid-chart.png" width="800" />
+  <img src="https://github.com/c4ller8/django_project/blob/e677d82e8ccc16082729ac91fba5bef6249cde97/css/assets/old-diagram-mermaid-chart.png" width="800" length="800"/>
 - **Final ERD:** (Your improved diagram with FKs)
   - `![Final ERD](path/to/final_erd.png)`
   - Final ERD explicitly defining primary and foreign keys for implementation.\_
