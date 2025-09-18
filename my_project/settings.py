@@ -16,7 +16,7 @@ import dj_database_url
 if os.path.exists("env.py"):
     import env  # noqa
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'. 
+# Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Quick-start development settings - unsuitable for production
@@ -29,7 +29,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = os.environ.get("DEBUG", False)
 
 ALLOWED_HOSTS = []
-CSRF_TRUSTED_ORIGINS = [ 
+CSRF_TRUSTED_ORIGINS = [
     "https://*.codeinstitute-ide.net/",
     "https://*.herokuapp.com"]
 host = os.environ.get("HOST")
