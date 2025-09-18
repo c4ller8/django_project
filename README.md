@@ -18,8 +18,47 @@ Responsive Mockup
 ## Data Model (Database Schema)
 
 - **Initial ERD:** (The first diagram)
-  <strong>Entity-Relationship Diagram (ERD)</strong>
-  <img src="https://github.com/c4ller8/django_project/blob/e677d82e8ccc16082729ac91fba5bef6249cde97/css/assets/old-diagram-mermaid-chart.png" width="800" length="800"/>
+  ## My ERD
+
+```mermaid
+erDiagram
+    USER ||--o{ POST : writes
+    USER ||--o{ COMMENT : writes
+    EPISODE ||--o{ POST : contains
+    POST ||--o{ COMMENT : receives
+
+    USER {
+        int id
+        string username
+    }
+
+    EPISODE {
+        int id
+        int episode_number
+        string title
+        text description
+        string image
+    }
+
+    POST {
+        int id
+        string title
+        text content
+        int rating
+        boolean is_published
+        datetime created_at
+        datetime updated_at
+    }
+
+    COMMENT {
+        int id
+        text body
+        boolean is_approved
+        datetime created_at
+        datetime updated_at
+    }
+```
+
 - **Final ERD:** (Your improved diagram with FKs)
   - `![Final ERD](path/to/final_erd.png)`
   - Final ERD explicitly defining primary and foreign keys for implementation.\_
