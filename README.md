@@ -9,7 +9,23 @@ Django Blog is a fully-featured, user-friendly blogging platform designed for wr
 Responsive Mockup
 [Insert a link to an image of your responsive mockup here. For example, a mockup from Figma or a screenshot of your project on different screen sizes.]
 
-Features
+## Wireframes (UI/UX Design)
+
+- Image: Home Page Wireframe
+- Image: Blog Post Page Wireframe
+- Image: Mobile View Wireframe
+
+## Data Model (Database Schema)
+
+- **Initial ERD:** (The first diagram)
+  ![Entity-Relationship Diagram (ERD)] (css/assets/old-diagram-mermaid-chart.png)
+  - Initial entity relationship diagram outlining core relationships.\_
+- **Final ERD:** (Your improved diagram with FKs)
+  - `![Final ERD](path/to/final_erd.png)`
+  - Final ERD explicitly defining primary and foreign keys for implementation.\_
+
+## Features
+
 Existing Features
 Navigation Bar
 
@@ -91,7 +107,8 @@ Django: The project's core logic and URL routing were tested thoroughly. No serv
 Unfixed Bugs
 There are no known unfixed bugs at the time of deployment. Minor warnings from the HTML validator related to non-standard template syntax (e.g., {% url 'post_detail' post.slug %}) are a known characteristic of template-based systems and do not affect functionality.
 
-Deployment
+## Deployment
+
 This project was deployed to Heroku. The steps to deploy are as follows:
 
 Create a requirements.txt file using the command pip3 freeze > requirements.txt.
