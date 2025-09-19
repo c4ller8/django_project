@@ -1,8 +1,28 @@
 {% extends "base.html" %}
 {% load static %}
+
 {% block content %}
-This is the episodes page
-
-
-
+<div class="container">
+    <h1>Episodes</h1>
+    <div class="row">
+        {% for episode in episodes %}
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="image-container">
+                    {% if "placeholder" in episode.featured_image.url %}
+                    <img class="card-img-top" src="{% static 'images/default.jpg' %}" alt="placeholder image">
+                    {% else %}
+                    <img class="card-img-top" src="{{ episode.featured_image.url }}" alt="{{ episode.title }}">
+                    {% endif %}
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Episode {{ episode.episode_number }}: {{ episode.title }}</h5>
+                    <p class="card-text">{{ episode.description|truncatewords:30 }}</p>
+                    <a href="#" class="btn btn-primary">View Episode</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
 {% endblock %}

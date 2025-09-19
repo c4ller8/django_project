@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        {% for post in post_list %}
+        <div class="card mb-4">
+            <div class="image-container">
+                <!-- This part already handles both cases perfectly -->
+                {% if post.episode and "placeholder" not in post.episode.featured_image.url %}
+                <img class="card-img-top" src="{{ post.episode.featured_image.url }}" alt="{{ post.episode.title }}">
+                {% else %}
+                <img class="card-img-top" src="{% static 'images/default.jpg' %}" alt="placeholder image">
+                {% endif %}
+                <div class="image-flash">
+                    <p class="author">Author: {{ post.author }}</p>
+                </div>
+            </div>
+            <div class="card-body">
+                <h2 class="card-title">{{ post.title }}</h2>
+                <!-- Show which episode this post is about -->
+                {% if post.episode %}
+                <p class="card-text text-muted">Episode {{ post.episode.episode_number }}: {{ post.episode.title }}</p>
+                {% endif %}
+                <p class="card-text text-muted h6">{{ post.created_on }}</p>
+                <p class="card-text">{{ post.excerpt }}</p>
+                <a href="{% url 'post_detail' post.slug %}" class="btn btn-primary">Read More &rarr;</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
