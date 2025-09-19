@@ -1,7 +1,9 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
+from episodes.models import Episode
 
-# Create your models here.
+
+User = get_user_model()
 STATUS = ((0, "Draft"), (1, "Published"))
 
 
@@ -15,6 +17,8 @@ class Post(models.Model):
     status = models.IntegerField(choices=STATUS, default=0)
     excerpt = models.TextField(blank=True)
     updated_on = models.DateTimeField(auto_now=True)
+    rating = models.IntegerField(default=0)
+    episode = models.ForeignKey(Episode, on_delete=models.CASCADE, related_name="posts", null=True, blank=True)
 
     class Meta:
         ordering = ["-created_on"]
@@ -31,6 +35,7 @@ class Comment(models.Model):
     body = models.TextField()
     approved = models.BooleanField(default=False)
     created_on = models.DateTimeField(auto_now_add=True)
+    updated_on = models.DateTimeField(auto_now=True)
 
     class Meta:
         ordering = ["created_on"]
