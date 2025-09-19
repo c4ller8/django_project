@@ -18,7 +18,9 @@ class Post(models.Model):
     excerpt = models.TextField(blank=True)
     updated_on = models.DateTimeField(auto_now=True)
     rating = models.IntegerField(default=0)
-    episode = models.ForeignKey(Episode, on_delete=models.CASCADE, related_name="posts", null=True, blank=True)
+    episode = models.ForeignKey(
+        Episode, on_delete=models.CASCADE, related_name="posts",
+        null=True, blank=True)
 
     class Meta:
         ordering = ["-created_on"]
