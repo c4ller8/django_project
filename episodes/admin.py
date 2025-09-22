@@ -1,7 +1,7 @@
 from django.contrib import admin
 from .models import Episode
-import cloudinary
-import cloudinary.uploader
+from cloudinary.models import CloudinaryField
+
 
 @admin.register(Episode)
 class EpisodeAdmin(admin.ModelAdmin):

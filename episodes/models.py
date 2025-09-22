@@ -7,5 +7,6 @@ class Episode(models.Model):
     title = models.CharField(max_length=200)
     description = models.TextField()
     featured_image = CloudinaryField('image', default='placeholder')
+
     def __str__(self):
         return f"Episode {self.episode_number}: {self.title}"
